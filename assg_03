@@ -1,0 +1,53 @@
+//   (e)
+//    Accept a string from the user and perform the following string operations- i. Calculate the length
+//    of string ii. String reversal iii. Equality check of two strings iii. Check palindrome ii. Check
+//    substring (Pointer to strings)
+
+
+#include<stdio.h>
+#include<string.h>
+
+
+int main()
+{
+    char s[20];
+    printf("Enter the string :\n");
+    gets(s);
+    int l=strlen(s);
+
+    char s1[20];
+    printf("Enter another string :\n");
+    gets(s1);
+    int l1=strlen(s);
+
+
+    // 1 .
+    printf("length of string %s : %d\n",s,l);
+
+    
+    // 2 .
+    printf("string reverse of %s : ",s);
+    strrev(s);
+    printf("%s\n",s);
+
+    // 3.
+    int k=strcmp(s,s1);
+    if(k==0)
+    printf(" s and s1  : Same strings\n",s,s1);
+    else
+    printf("s and s1  : Different strings \n",s,s1);
+    
+    // 4. ispalin
+    int x=strcmp(s,strrev(x));
+    if(k==0)
+    printf(" %s :palindrome strings\n",s);
+    else
+    printf("%s :not palindrome strings \n",s);
+
+
+
+    
+    
+    
+
+}
