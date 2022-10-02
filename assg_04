@@ -1,0 +1,104 @@
+
+
+#include<stdio.h>
+int main()
+{
+ 
+    int i,j;
+    int a[3][3];
+    int b[3][3];
+
+    //  read matrix a :
+    printf("Enter array elements of matrix a (rowise) : \n");
+    for(int i=0;i<3;i++)
+    {
+        for(int j=0;j<3;j++)
+        {
+            scanf("%d",&a[i][j]);  //scanf automatically takes nxt element on next line 
+        }
+        printf("\n");
+    }
+
+    // read matrix b:
+    printf("Enter array elements of matrix b (rowise) : \n");
+    for(int i=0;i<3;i++)
+    {
+        for(int j=0;j<3;j++)
+        {
+            scanf("%d",&b[i][j]);  //scanf automatically takes nxt element on next line 
+        }
+        printf("\n");
+    }
+    // print matrix a :
+    printf("Matrix a :> \n"); 
+    for(int i=0;i<3;i++)
+    {
+        for(int j=0;j<3;j++)
+        {
+            printf(" %d ",a[i][j]);
+        }
+        printf("\n");
+    }
+    // print matrix b :
+    printf("Matrix b :>\n");
+    for(int i=0;i<3;i++)
+    {
+        for(int j=0;j<3;j++)
+        {
+            printf(" %d ",b[i][j]);
+        }
+        printf("\n");
+    }
+
+    // To add matrices :
+
+    int c[3][3];
+    for(int i=0;i<3;i++)
+    {
+        for(int j=0;j<3;j++)
+        {
+            c[i][j]=a[i][j]+b[i][j];
+        }
+    }
+
+    printf("The addition of matrices a and b : \n");
+
+    for(int i=0;i<3;i++)
+    {
+        for(int j=0;j<3;j++)
+        {
+            printf("  %d  ",c[i][j]);
+        }
+        printf("\n");
+    }
+   
+    // Multiplying two matrices :
+    printf("The multiplication of matrices a and b  is : \n");
+    int d[10][10];
+    for(i=0;i<3;i++)    
+    {    
+      for(j=0;j<3;j++)    
+      {    
+        d[i][j]=0;  
+        for(int k=0;k<3;k++)    
+         {       
+          d[i][j]+=a[i][k]*b[k][j];    
+         }    
+      }    
+    }    
+
+     
+
+    for(int i=0;i<3;i++)
+    {
+        for(int j=0;j<3;j++)
+        {
+            printf("  %d  ",d[i][j]);
+        }
+        printf("\n");
+    }
+
+
+
+
+}
