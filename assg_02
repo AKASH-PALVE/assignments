@@ -1,0 +1,40 @@
+// (b) :
+//    Pass two parameters to function as(start and end), and display all prime numbers between two
+//    Intervals
+
+#include<stdio.h>
+void display_prime(int a,int b)
+{
+    
+    for(int i=a;i<=b;i++)
+    {
+        
+        int flag=0;  // prime 
+        
+        
+        for(int j=2;j<i;j++)
+        {
+            
+            if(i%j == 0 )
+            {
+                flag=1;  // not prime 
+                break;
+            }
+
+        }
+       if(flag == 0)
+       {
+        printf("%d ",i);
+       }
+
+
+    }
+}
+int main()
+{
+    int start=10;
+    int end=50;
+    display_prime(start,end);
+}
+
+// no print 1 :
