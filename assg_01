@@ -1,0 +1,71 @@
+// a.
+
+// SIMULATE THE SIMPLE CALCULATOR 
+
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+int main()
+{
+
+     printf("\n\n\n");
+    //  system("color 9F");
+
+     printf("                          ** SIMPLE CALCULATOR **                               \n");
+
+     repeat:
+     
+
+      printf("              1 : ADDITION :             2 : SUBTRACTION :\n");
+
+      printf("              3 : MULTIPLICATION:        4 : DIVISION : \n");
+
+      printf("\n\n\n");
+      printf("Please enter the respective key to perform operation !\n");
+      int n,a,b,ans;
+      char z;
+      scanf("%d",&n);
+      printf("Enter first number :\n");
+      scanf("%d",&a);
+      printf("Enter second number :\n");
+      scanf("%d",&b);
+      printf("\n\n\n");
+
+      switch(n)
+      {
+        case 1:
+        printf("    ADDITION : %d \n",a+b);
+        break;
+
+        case 2:
+        printf("    SUBTRACTION : %d \n",a-b);
+        break;
+
+        case 3:
+        printf("    MULTIPLICATION : %d \n",a*b);
+        break;
+
+        case 4:
+        printf("    DIVISION : %d \n",a/b);
+        break;
+
+        default :
+        printf("Please enter valid option :\n");
+        goto repeat;
+        break;
+              
+      }
+      
+        printf("                              ****                            \n");  
+        printf("To repeat process , press y \n");
+        scanf("%c",&z);
+        if(z=='y' || z=='Y');
+        {
+            goto repeat;
+        }
+
+
+        return 0;
+}
+
+// no other than 1 t0 4
