@@ -1,0 +1,101 @@
+#include<stdio.h>
+
+void main(){
+    int a[3][3],b[3][3],c[3][3],d[3][3];
+    int choice,multi,min,max,flag=0,temp=0;
+    char again;
+    int *p,*q;
+    p=&a[0][0];
+    q=&b[0][0];
+
+
+    printf("Enter elements of Matrix 1 :\n");
+    for( int i=0;i<3;i++){
+        for( int j=0;j<3;j++){
+            scanf("%d",&a[i][j]);
+        }
+    }
+
+
+    printf("Enter elements of Matrix 2 :\n");
+    for( int i=0;i<3;i++){
+        for(int  j=0;j<3;j++){
+            scanf("%d",&b[i][j]);
+        }
+    }
+
+    ch:
+    printf("\n1: Additon\n2: Multiplication\n3: Saddle point\n");
+    printf("Enter your choice : ");
+    scanf("%d",&choice);
+
+    switch(choice){
+
+        case 1 :
+               for( int i=0;i<3;i++){
+                   for( int j=0;j<3;j++){
+                       c[i][j]=*(p+i*3+j)+*(q+i*3+j);  // using pointers 
+                   }
+               }
+               printf("\nAdditon of matrix :\n");
+               for( int i=0;i<3;i++){
+                   for( int j=0;j<3;j++){
+                       printf("%d \t",c[i][j]);
+                    }
+                   printf("\n");
+               }
+               break;
+        case 2 :
+               for( int i=0;i<3;i++){
+                   for(int j=0;j<3;j++){
+                       multi=0;
+                       for(int k=0;k<3;k++){
+                           multi+=(*(p+i*3+k))*(*(q+k*3+j));
+                       }
+                       d[i][j]=multi;
+                   }
+               }
+               printf("\nMultiplication of matrix :\n");
+               for(int i=0;i<3;i++){
+                   for(int j=0;j<3;j++){
+                       printf("%d \t",d[i][j]);
+                   }printf("\n");
+               }
+               break;
+        case 3 :
+               for( int i=0;i<3;i++){
+                   min= (*(p+i*3));
+                   for(int j=1;j<3;j++){
+                      if((*(p+i*3+j))<min){
+                        min=(*(p+i*3+j));
+                        temp=j;
+                      }
+                    }
+                   max=(*(p+i*3+temp));
+                   for(int k=0;k<3;k++){
+                      if((*(p+k*3+temp))>max){
+                        max=(*(p+k*3+temp));
+                      }
+                    }
+                    if(min==max){
+                      printf("\nSaddle point is : %d\n ",min);
+                      flag=1;
+                    }
+                }
+                if(flag==0){
+                   printf("\nNo saddle point\n");
+                }
+                break;
+                
+               default :
+               printf("\n!!Enter a valid Option..\n");
+               goto ch;
+               
+    }
+    printf("\nDo you want to perform it again (Y/N) : ");
+    scanf(" %c", &again );
+    if(again=='y' || again=='Y'){
+        goto ch;    
+    }
+   
+}
